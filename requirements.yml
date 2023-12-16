@@ -1,0 +1,15 @@
+#from galaxy
+- src: geerlungguy.docker
+- src: geerlingguy.mysql
+vars:
+        mysql_root_password: "admin"
+        mysql_databases:
+          - name: My_database
+            encoding: utf8
+            collation: utf8_general_ci
+        mysql_users:
+          - name: Fori
+            host: localhost
+            password: "Password1"
+            priv: "My_database.*:ALL"
+  
