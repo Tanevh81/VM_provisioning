@@ -1,9 +1,14 @@
 name: Terraform Execution
 
+#on:
+  #push:
+    #branches:
+     # - main
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Build WordPress Docker Image and Push to Docker Hub"]
+    types:
+      - completed      
 
 jobs:
   terraform:
